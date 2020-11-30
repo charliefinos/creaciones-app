@@ -80,6 +80,7 @@ const updateUserProfile = asyncHandler(async (req, res) => {
 // POST /api/users
 // access Public
 const registerUser = asyncHandler(async (req, res) => {
+    // Shorthand for req.body
     const { name, email, password } = req.body
 
     const userExists = await User.findOne({ email })
@@ -109,4 +110,14 @@ const registerUser = asyncHandler(async (req, res) => {
     }
 })
 
-export { authUser, getUserProfile, registerUser, updateUserProfile }
+// Get all users
+// GET /api/users
+// access Private/Admin
+const getUsers = asyncHandler(async (req, res) => {
+
+    const users = await User.find({})
+    res.json(users)
+
+})
+
+export { authUser, getUserProfile, registerUser, updateUserProfile, getUsers }
