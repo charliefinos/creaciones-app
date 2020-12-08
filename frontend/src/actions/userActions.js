@@ -6,6 +6,7 @@ import {
     USER_LIST_FAIL,
     USER_LIST_REQUEST,
     USER_LIST_SUCCESS,
+    USER_LIST_RESET,
     USER_LOGIN_FAIL,
     USER_LOGIN_REQUEST,
     USER_LOGIN_SUCCESS,
@@ -52,6 +53,7 @@ export const login = (email, password) => async (dispatch) => {
 export const logout = () => (dispatch, history) => {
     localStorage.removeItem('userInfo')
     dispatch({ type: USER_LOGOUT })
+    dispatch({ type: USER_LIST_RESET })
 
 }
 
@@ -165,7 +167,7 @@ export const listUsers = () => async (dispatch, getState) => {
                 Authorization: `Bearer ${userInfo.token}`
             }
         }
-        // Send the info to the backend to Register
+        // Get the user list from the backend 
         const { data } = await axios.get(`/api/users`, config)
 
         dispatch({
