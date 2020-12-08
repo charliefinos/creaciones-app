@@ -54,7 +54,6 @@ export const logout = () => (dispatch, history) => {
     localStorage.removeItem('userInfo')
     dispatch({ type: USER_LOGOUT })
     dispatch({ type: USER_LIST_RESET })
-
 }
 
 // Execute an action to REGISTER
