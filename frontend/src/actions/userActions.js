@@ -87,7 +87,7 @@ export const register = (name, email, password) => async (dispatch) => {
             payload: data
         })
 
-        // Save the login info to LocalStorage
+        // Save the register info to LocalStorage
         localStorage.setItem('userInfo', JSON.stringify(data))
     } catch (error) {
         dispatch({
@@ -112,7 +112,7 @@ export const getUserDetails = (id) => async (dispatch, getState) => {
                 Authorization: `Bearer ${userInfo.token}`
             }
         }
-        // Send the info to the backend to Register
+        // Get the user details info from the backend 
         const { data } = await axios.get(`/api/users/${id}`, config)
 
         dispatch({
