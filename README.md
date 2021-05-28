@@ -2,7 +2,7 @@
 
 > E-commerce platform built with the MERN stack & Redux.
 
-Check the live project on [MERN Simple Social Media](https://creaciones-de-colores.herokuapp.com/)
+Check the live project on [MERN E-commerce](https://creaciones-de-colores.herokuapp.com/)
 
 ![screenshot](http://res.cloudinary.com/dxb7leok1/image/upload/v1622244866/rvwsncwrj0rmx7s7ffsx.png)
 
