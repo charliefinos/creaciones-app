@@ -2,9 +2,9 @@
 
 > Simple Social Media platform built with the MERN stack & Redux.
 
-Check the live project on [MERN Simple Social Media](https://social-media-smpl.herokuapp.com/)
+Check the live project on [MERN Simple Social Media](https://creaciones-de-colores.herokuapp.com/)
 
-![screenshot](https://res.cloudinary.com/dxb7leok1/image/upload/v1622138825/kbaw4nfjbddtspp7epyv.png)
+![screenshot](http://res.cloudinary.com/dxb7leok1/image/upload/v1622244866/rvwsncwrj0rmx7s7ffsx.png)
 
 ## Features
 
