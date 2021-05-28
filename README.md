@@ -1,6 +1,6 @@
-# Simple Social Media
+# E-Commerce
 
-> Simple Social Media platform built with the MERN stack & Redux.
+> E-commerce platform built with the MERN stack & Redux.
 
 Check the live project on [MERN Simple Social Media](https://creaciones-de-colores.herokuapp.com/)
 
