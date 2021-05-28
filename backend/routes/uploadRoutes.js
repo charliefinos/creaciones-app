@@ -1,6 +1,10 @@
 import path from 'path'
 import express from 'express'
 import multer from 'multer'
+import pkg from 'cloudinary'
+import asyncHandler from 'express-async-handler'
+
+const cloudinary = pkg
 
 const router = express.Router()
 
@@ -33,8 +37,32 @@ const upload = multer({
     }
 })
 
-router.post('/', upload.single('image'), (req, res) => {
-    res.send(`/${req.file.path.replace(/\\/g, "/")}`)
-})
+function uploadToCloudinary(image) {
+    return new Promise((resolve, reject) => {
+        cloudinary.v2.uploader.upload(image, (err, url) => {
+            if (err) return reject(err);
+            return resolve(url);
+        })
+    });
+}
+
+router.post('/', upload.single('image'), asyncHandler(async (req, res) => {
+    console.log(req.file.path)
+    const uploadPhoto = await cloudinary.v2.uploader.upload(`${req.file.path.replace(/\\/g, "/")}`)
+    console.log(uploadPhoto) // This will give you all the information back from the uploaded photo result
+    console.log(uploadPhoto.url)  // This is what we want to send back now in the  res.send
+
+    if (uploadPhoto) {
+        res.json({
+            image: uploadPhoto.url
+        })
+    } else {
+        res.status(500)
+    }
+
+}))
+// router.post('/', upload.single('image'), (req, res) => {
+//     res.send(`/${req.file.path.replace(/\\/g, "/")}`)
+// })
 
 export default router
