@@ -30,19 +30,19 @@ const HomeScreen = ({ match }) => {
             ) : error ? (
                 <Message variant='danger'> {error} </Message>
             ) : (
-                        <>
-                            <Row>
-                                {products.map((product) => {
-                                    return (
-                                        <Col key={product._id} sm={12} md={6} lg={4}>
-                                            <Product md product={product} />
-                                        </Col>
-                                    )
-                                })}
-                            </Row>
-                            <Paginate pages={pages} page={page} keyword={keyword ? keyword : ''} />
-                        </>
-                    )
+                <>
+                    <Row>
+                        {products.map((product) => {
+                            return (
+                                <Col key={product._id} sm={12} md={6} lg={4}>
+                                    <Product md sm product={product} />
+                                </Col>
+                            )
+                        })}
+                    </Row>
+                    <Paginate pages={pages} page={page} keyword={keyword ? keyword : ''} />
+                </>
+            )
             }
         </>
     )
