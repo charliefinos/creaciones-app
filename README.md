@@ -4,7 +4,7 @@
 
 Check the live project on [MERN E-commerce](https://creaciones-de-colores.herokuapp.com/)
 
-![screenshot](http://res.cloudinary.com/dxb7leok1/image/upload/v1622244866/rvwsncwrj0rmx7s7ffsx.png)
+![screenshot](http://res.cloudinary.com/duvti2tkn/image/upload/v1622574151/c4jbyvcadb9orebh7bxi.png)
 
 ## Features
 
