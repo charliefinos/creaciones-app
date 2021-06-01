@@ -24,9 +24,9 @@ const HomeScreen = ({ match }) => {
 
     return (
         <>
-            <h1>Latest Products</h1>
+            <h1>Ultimos Productos</h1>
             { loading ? (
-                <Loader>Loading...</Loader>
+                <Loader>Cargando...</Loader>
             ) : error ? (
                 <Message variant='danger'> {error} </Message>
             ) : (

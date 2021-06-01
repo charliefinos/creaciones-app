@@ -27,10 +27,10 @@ const ShippingScreen = ({ history }) => {
 
     return <FormContainer>
         <CheckOutSteps step1 step2 />
-        <h1>Shipping</h1>
+        <h1>Envio</h1>
         <Form onSubmit={submitHandler}>
             <Form.Group controlId='address'>
-                <Form.Label>Address</Form.Label>
+                <Form.Label>Direccion</Form.Label>
                 <Form.Control
                     type='text'
                     placeholder='Enter Address'
@@ -40,7 +40,7 @@ const ShippingScreen = ({ history }) => {
             </Form.Group>
 
             <Form.Group controlId='city'>
-                <Form.Label>City</Form.Label>
+                <Form.Label>Ciudad</Form.Label>
                 <Form.Control
                     type='text'
                     placeholder='Enter city'
@@ -50,7 +50,7 @@ const ShippingScreen = ({ history }) => {
             </Form.Group>
 
             <Form.Group controlId='postalCode'>
-                <Form.Label>Postal Code</Form.Label>
+                <Form.Label>Codigo Postal</Form.Label>
                 <Form.Control
                     type='text'
                     placeholder='Enter postal code'
@@ -60,7 +60,7 @@ const ShippingScreen = ({ history }) => {
             </Form.Group>
 
             <Form.Group controlId='country'>
-                <Form.Label>Country</Form.Label>
+                <Form.Label>Pais</Form.Label>
                 <Form.Control
                     type='text'
                     placeholder='Enter Country'
@@ -69,8 +69,8 @@ const ShippingScreen = ({ history }) => {
                     onChange={(e) => setCountry(e.target.value)}></Form.Control>
             </Form.Group>
 
-            <Button type='submit' variant='primary'>
-                Continue
+            <Button className="mt-3" type='submit' variant='primary'>
+                Continuar
             </Button>
         </Form>
     </FormContainer>

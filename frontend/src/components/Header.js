@@ -17,24 +17,25 @@ const Header = ({ history }) => {
     }
     return (
         <header>
-            <Navbar bg="dark" variant='dark' expand="lg" collapseOnSelect>
+            <Navbar bg="primary" variant='light' expand="lg" collapseOnSelect>
                 <Container>
                     <LinkContainer to='/'>
                         <Navbar.Brand>Creaciones De Colores</Navbar.Brand>
                     </LinkContainer>
                     <Navbar.Toggle aria-controls="basic-navbar-nav" />
-                    <Navbar.Collapse id="basic-navbar-nav">
-                        <Route render={({ history }) => <SearchBox history={history} />} />
-                        <Nav className="ml-auto">
+                    <Navbar.Collapse className="mt-3 mb-2" id="basic-navbar-nav">
+
+                        <Nav className="ms-auto">
+                            <Route render={({ history }) => <SearchBox history={history} />} />
                             <LinkContainer to='/cart'>
-                                <Nav.Link><i className='fas fa-shopping-cart'></i>Cart</Nav.Link>
+                                <Nav.Link><i className='fas fa-shopping-cart'></i>Carrito</Nav.Link>
                             </LinkContainer>
                             {userInfo ? (
                                 <NavDropdown title={userInfo.name} id='username'>
                                     <LinkContainer to='/profile'>
-                                        <NavDropdown.Item>Profile</NavDropdown.Item>
+                                        <NavDropdown.Item>Perfil</NavDropdown.Item>
                                     </LinkContainer>
-                                    <NavDropdown.Item onClick={logoutHandler}>Logout</NavDropdown.Item>
+                                    <NavDropdown.Item onClick={logoutHandler}>Salir</NavDropdown.Item>
                                 </NavDropdown>
                             ) : (<LinkContainer to='/login'>
                                 <Nav.Link><i className='fas fa-user'></i>Ingresar</Nav.Link>
@@ -43,13 +44,13 @@ const Header = ({ history }) => {
                             {userInfo && userInfo.isAdmin && (
                                 <NavDropdown title='Admin' id='adminmenu'>
                                     <LinkContainer to='/admin/userList'>
-                                        <NavDropdown.Item>Users</NavDropdown.Item>
+                                        <NavDropdown.Item>Usuarios</NavDropdown.Item>
                                     </LinkContainer>
                                     <LinkContainer to='/admin/productList'>
-                                        <NavDropdown.Item>Products</NavDropdown.Item>
+                                        <NavDropdown.Item>Productos</NavDropdown.Item>
                                     </LinkContainer>
                                     <LinkContainer to='/admin/orderList'>
-                                        <NavDropdown.Item>Orders</NavDropdown.Item>
+                                        <NavDropdown.Item>Ordenes</NavDropdown.Item>
                                     </LinkContainer>
                                 </NavDropdown>)}
                         </Nav>
